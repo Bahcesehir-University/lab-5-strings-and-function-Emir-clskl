@@ -83,7 +83,7 @@ public:
 
 MyString::MyString() {
     // TODO: Initialize with empty string
-    data=" ";
+    data="";
 }
 
 MyString::MyString(const string& str) {
@@ -159,16 +159,16 @@ MyString MyString::trim() const {
     if (first == string::npos) {
         return MyString("");
     }
-    size_t last = data.find_last_not_of(" \t\n\r");
-    return MyString(data.substr(first, last - first + 1));
+    size_t end = data.find_last_not_of(" \t\n\r");
+    return MyString(data.substr(first, end - first + 1));
 }
 
 MyString MyString::reverse() const {
     // TODO: Return a NEW MyString with characters in reverse order
     // Hint: Use std::reverse on a copy
-    string temp = data;
-    std::reverse(temp.begin(), temp.end());
-    return MyString(temp);
+    string result = data;
+    std::reverse(result.begin(), result.end());
+    return MyString(result);
 }
 
 // ---- Search Operations ----
