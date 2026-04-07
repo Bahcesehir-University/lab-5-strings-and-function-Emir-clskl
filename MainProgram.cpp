@@ -138,7 +138,7 @@ MyString MyString::toUpperCase() const {
     // Do NOT modify the original object
     string temp = data;
     transform(temp.begin(), temp.end(), temp.begin(),
-              [](unsigned char c) { return toupper(c); });
+              [](unsigned char c) { return temp::toupper(c); });
     return MyString(temp);
 }
 
@@ -148,7 +148,7 @@ MyString MyString::toLowerCase() const {
     // Do NOT modify the original object
     string newData = data;
     transform(newData.begin(), newData.end(), newData.begin(),
-              [](unsigned char c) { return tolower(c); });
+              [](unsigned char c) { return newData::tolower(c); });
 }
 
 MyString MyString::trim() const {
